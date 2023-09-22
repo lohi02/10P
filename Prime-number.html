@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPrime(num) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return num > 1;
+        }
+
+        function listPrimesInRange(endRange) {
+            return Array.from({ length: endRange + 1 }, (_, i) => i).filter(isPrime);
+        }
+
+        const endRange = parseInt(prompt("Enter the upper range to find prime numbers up to:"));
+
+        if ( endRange >= 2) {
+            const primeNumbers = listPrimesInRange(endRange);
+            console.log(`Prime numbers up to ${endRange} are: ${primeNumbers.join(", ")}`);
+        } else {
+            console.log("Invalid input. Please enter a valid input");
+        }
+
+    </script>
+</body>
+
+</html>

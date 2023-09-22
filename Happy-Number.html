@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isHappyNumber(number) {
+    
+      var numberStr = number.toString();
+    
+      var length = numberStr.length;
+    
+      let sum = 0;
+    
+      for (let i = 0; i < length; i++) {
+    
+     const digit = parseInt(numberStr[i]);
+    
+     sum += Math.pow(digit, 2);   
+      }
+      if(isHappyNumber(sum)==1){
+            return 1;
+      }
+        else{
+            return 0;
+        }
+    }
+    const num = parseInt(prompt("Enter a number"));
+    if (isHappyNumber(num)==1) {
+      console.log(num +' is a Happy number.');
+    } else {
+      console.log(`${num} is not a Happy number.`);
+    }
+</script>
+</html>
